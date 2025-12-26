@@ -1,0 +1,8 @@
+/Users/ppeter/QA/self-healing-selenium-framework/src/main/java/framework/core/HealingWebDriver.java
+/Users/ppeter/QA/self-healing-selenium-framework/src/main/java/framework/core/HealingResult.java
+/Users/ppeter/QA/self-healing-selenium-framework/src/main/java/framework/utils/LocatorParser.java
+/Users/ppeter/QA/self-healing-selenium-framework/src/main/java/framework/annotations/SmartFindBy.java
+/Users/ppeter/QA/self-healing-selenium-framework/src/main/java/framework/core/HealingEngine.java
+/Users/ppeter/QA/self-healing-selenium-framework/src/main/java/framework/strategies/WaitStrategy.java
+/Users/ppeter/QA/self-healing-selenium-framework/src/main/java/framework/strategies/HealingStrategy.java
+/Users/ppeter/QA/self-healing-selenium-framework/src/main/java/framework/core/HealingContext.java

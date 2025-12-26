@@ -1,0 +1,10 @@
+framework/strategies/WaitStrategy.class
+framework/core/HealingWebDriver.class
+framework/core/HealingResult$HealingAttempt.class
+framework/annotations/SmartFindBy.class
+framework/core/HealingContext.class
+framework/utils/LocatorParser.class
+framework/core/HealingEngine.class
+framework/core/HealingResult.class
+framework/strategies/HealingStrategy.class
+framework/core/HealingContext$LocatorStats.class
