@@ -5,7 +5,6 @@ import org.openqa.selenium.remote.FileDetector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -20,7 +19,7 @@ import java.util.concurrent.ConcurrentMap;
  * the healing engine attempts various recovery strategies before failing the test.
  * </p>
  *
- * @author Peter Petermsc
+ * @author Peter Pestriakov
  * @version 1.0
  */
 public class HealingWebDriver implements WebDriver, TakesScreenshot, JavascriptExecutor {
@@ -302,7 +301,9 @@ public class HealingWebDriver implements WebDriver, TakesScreenshot, JavascriptE
      * Sets the file detector (deprecated in Selenium 4 but needed for compatibility).
      *
      * @param detector the file detector to use
+     * @deprecated FileDetector is deprecated in Selenium 4. Use sendKeys() for file uploads instead.
      */
+    @Deprecated(since = "4.0.0", forRemoval = true)
     public void setFileDetector(FileDetector detector) {
         // This method is deprecated but we need it for RemoteWebDriver compatibility
         if (delegate instanceof org.openqa.selenium.remote.RemoteWebDriver) {

@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Field;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +23,7 @@ import java.util.Map;
  * each one sequentially until the element is found or all fallbacks are exhausted.
  * </p>
  *
- * @author Peter Petermsc
+ * @author Peter Pestriakov
  * @version 1.0
  */
 public class FallbackLocatorStrategy implements HealingStrategy {
@@ -148,30 +147,16 @@ public class FallbackLocatorStrategy implements HealingStrategy {
             return fallbackCache.get(locatorKey);
         }
 
-        // Parse fallbacks from annotation metadata
-        // This is a simplified implementation - in reality, we'd need to
-        // maintain a registry of @SmartFindBy annotated fields
-        By[] fallbacks = parseFallbacksFromAnnotations(originalLocator);
+        // IMPORTANT: If we reach here, it means this locator wasn't registered
+        // via registerAnnotation(). This shouldn't happen in normal flow.
+        // Return empty array to indicate no fallbacks available.
+        logger.warn("No fallback locators found in cache for: {}. " +
+                "Was the field properly registered with @SmartFindBy?", originalLocator);
 
-        // Cache for future use
-        fallbackCache.put(locatorKey, fallbacks);
+        By[] emptyFallbacks = new By[0];
+        fallbackCache.put(locatorKey, emptyFallbacks); // Cache empty result
 
-        return fallbacks;
-    }
-
-    /**
-     * Simulates parsing fallback locators from @SmartFindBy annotations.
-     * In a full implementation, this would use reflection to scan classes.
-     */
-    private By[] parseFallbacksFromAnnotations(By originalLocator) {
-        // This is a placeholder for the real implementation
-        // In the real implementation, we would:
-        // 1. Maintain a registry of Page Objects with @SmartFindBy fields
-        // 2. Map original locators to their annotation metadata
-        // 3. Parse the fallbacks array from the annotation
-
-        // For now, return empty array - we'll populate this via registerAnnotation()
-        return new By[0];
+        return emptyFallbacks;
     }
 
     /**

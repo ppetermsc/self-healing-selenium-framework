@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * high success rate for common timing-related failures.
  * </p>
  *
- * @author Peter Petermsc
+ * @author Peter Pestriakov
  * @version 1.0
  */
 public class WaitStrategy implements HealingStrategy {

@@ -9,7 +9,7 @@ import org.openqa.selenium.InvalidSelectorException;
  * Supports various locator formats including those from @SmartFindBy annotations.
  * </p>
  *
- * @author Peter Petermsc
+ * @author Peter Pestriakov
  * @version 1.0
  */
 public class LocatorParser {

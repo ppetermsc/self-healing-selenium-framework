@@ -96,3 +96,4 @@ public @interface SmartFindBy {
      */
     int timeout() default 10;
 }
+
