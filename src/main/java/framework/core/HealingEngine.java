@@ -1,11 +1,13 @@
 package framework.core;
 
+import framework.strategies.FallbackLocatorStrategy;
+import framework.strategies.HealingStrategy;
+import framework.strategies.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import framework.strategies.HealingStrategy;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -48,12 +50,22 @@ public class HealingEngine {
         sortStrategiesByPriority();
     }
 
+    /**
+     * Initializes the engine with default healing strategies.
+     * Strategies are added in priority order (lower number = higher priority).
+     */
     private void initializeDefaultStrategies() {
-        strategies.add(new framework.strategies.WaitStrategy());
+        // Add strategies in priority order
+        strategies.add(new WaitStrategy());                 // Priority 1 - wait first
+        strategies.add(new FallbackLocatorStrategy());     // Priority 2 - try fallbacks
+
         sortStrategiesByPriority();
-        logger.info("Initialized HealingEngine with default strategies");
+        logger.info("Initialized HealingEngine with {} default strategies", strategies.size());
     }
 
+    /**
+     * Sorts strategies by their priority (ascending order).
+     */
     private void sortStrategiesByPriority() {
         strategies.sort(Comparator.comparingInt(HealingStrategy::getPriority));
     }
