@@ -20,7 +20,7 @@ driver.findElement(By.id("dynamic-button")).click();
 ```
 
 ### 🚀 Quick Start
-1. Add Dependency (Maven)
+**1. Add Dependency (Maven)**
 ```xml
 <dependency>
     <groupId>com.github.ppetermsc</groupId>
@@ -29,7 +29,7 @@ driver.findElement(By.id("dynamic-button")).click();
 </dependency>
 ```
 
-2. Basic Usage
+**2. Basic Usage**
 ```java
 import framework.core.HealingWebDriver;
 import org.openqa.selenium.*;
@@ -49,7 +49,7 @@ public class QuickExample {
 }
 ```
 
-3. Advanced: Self-Healing Page Objects
+**3. Advanced: Self-Healing Page Objects**
 ```java
 import framework.annotations.SmartFindBy;
 import framework.core.SelfHealingPageFactory;
