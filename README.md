@@ -87,4 +87,5 @@ For comprehensive guides and examples, visit the documentation:
 - **[🎯 Project Philosophy & Comparisons](docs/PHILOSOPHY.md)** - Why we built it and how it compares to other tools.
 
 ### 📄 License
-Distributed under the MIT License. See LICENSE for more information.
+
+Distributed under the MIT License. See **[LICENSE](LICENSE)** for more information.
