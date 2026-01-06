@@ -85,6 +85,7 @@ For comprehensive guides and examples, visit the documentation:
 
 - **[📖 Complete Usage Guide](docs/USAGE_GUIDE.md)** - Everything from setup to advanced customization.
 - **[🎯 Project Philosophy & Comparisons](docs/PHILOSOPHY.md)** - Why we built it and how it compares to other tools.
+- **[🤝 Contributing Guidelines](CONTRIBUTING.md)** - How to report issues, suggest features, and submit code.
 
 ### 📄 License
 
