@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Framework logs - show DEBUG for our framework -->
+    <logger name="framework" level="DEBUG" />
+
+    <!-- WebDriverManager logs - INFO level -->
+    <logger name="io.github.bonigarcia" level="INFO" />
+
+    <!-- Selenium logs - only WARN and ERROR -->
+    <logger name="org.openqa.selenium" level="WARN" />
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
